@@ -20,8 +20,8 @@ open class DemoApplication @Inject constructor(
 
     fun run() {
         LOG.info("started DemoApplication..")
-        greetingService.logGreeting()
-        chuckNorrisJokeService.logRandomJoke()
+        greetingService.printGreeting()
+        chuckNorrisJokeService.printRandomJoke()
         LOG.info("finished DemoApplication!")
     }
 

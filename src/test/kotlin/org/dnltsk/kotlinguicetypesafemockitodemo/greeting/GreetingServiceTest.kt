@@ -1,57 +1,32 @@
 package org.dnltsk.kotlinguicetypesafemockitodemo.greeting
 
-import ch.qos.logback.classic.Level
-import ch.qos.logback.classic.Logger
-import ch.qos.logback.classic.spi.ILoggingEvent
-import ch.qos.logback.classic.spi.LoggingEvent
-import ch.qos.logback.core.Appender
+import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
-import org.assertj.core.api.AssertionsForClassTypes.assertThat
-import org.junit.After
+import org.dnltsk.kotlinguicetypesafemockitodemo.DemoPrintWriter
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.ArgumentCaptor
-import org.mockito.Captor
+import org.mockito.ArgumentMatchers.contains
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
-import org.mockito.junit.MockitoJUnitRunner
-import org.slf4j.LoggerFactory
 
-@RunWith(MockitoJUnitRunner::class)
 class GreetingServiceTest() {
 
     @Mock
-    lateinit var mockAppender: Appender<ILoggingEvent>
-
-    @Captor
-    lateinit var captorLoggingEvent: ArgumentCaptor<LoggingEvent>
+    lateinit var demoPrintWriter: DemoPrintWriter
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        val logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME) as Logger
-        logger.addAppender(mockAppender)
-    }
-
-    @After
-    fun teardown() {
-        val logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME) as Logger
-        logger.detachAppender(mockAppender)
     }
 
     @Test
-    fun logGreeting_uses_the_ingested_value() {
+    fun logGreeting_prints_the_given_greeting() {
         //given
-        val greetingService = GreetingService("foo")
+        val greetingService = GreetingService("foo-name", demoPrintWriter)
         //when
-        greetingService.logGreeting()
+        greetingService.printGreeting()
         //than
-
-        verify(mockAppender).doAppend(captorLoggingEvent.capture())
-        val loggingEvent = captorLoggingEvent.getValue()
-        assertThat(loggingEvent.getLevel()).isEqualTo(Level.INFO)
-        assertThat(loggingEvent.formattedMessage).contains("foo")
+        verify(demoPrintWriter, times(1)).println(contains("foo-name"))
     }
 
 }

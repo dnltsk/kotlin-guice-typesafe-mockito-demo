@@ -37,7 +37,7 @@ class DemoApplicationTest {
     @Test
     fun run_method_uses_the_two_demo_services() {
         demoApplication.run()
-        verify(greetingService, times(1)).logGreeting()
-        verify(chuckNorrisJokeService, times(1)).logRandomJoke()
+        verify(greetingService, times(1)).printGreeting()
+        verify(chuckNorrisJokeService, times(1)).printRandomJoke()
     }
 }
