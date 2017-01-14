@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/dnltsk/kotlin-guice-typesafe-mockito-demo.svg?branch=master)](https://travis-ci.org/dnltsk/kotlin-guice-typesafe-mockito-demo) [![codecov](https://codecov.io/gh/dnltsk/kotlin-guice-typesafe-mockito-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/dnltsk/kotlin-guice-typesafe-mockito-demo)
+ [![codebeat badge](https://codebeat.co/badges/9fcb09b1-15d8-4b3d-a3cc-fd8f7f81b412)](https://codebeat.co/projects/github-com-dnltsk-kotlin-guice-typesafe-mockito-demo)
+
+
 # Kotlin, Guice, Typesafe Config, Mockito Demo
 
 This Demo gives you a starting point when creating an application in Kotlin with Guice, Typesafe Config, and Mockito.
