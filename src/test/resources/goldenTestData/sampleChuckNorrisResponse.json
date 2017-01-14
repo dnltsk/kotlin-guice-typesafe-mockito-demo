@@ -1,0 +1,10 @@
+{
+  "type": "success",
+  "value": {
+    "id": 556,
+    "joke": "Chuck Norris can write to an output stream.",
+    "categories": [
+      "nerdy"
+    ]
+  }
+}
