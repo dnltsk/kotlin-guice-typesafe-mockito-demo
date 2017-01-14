@@ -16,7 +16,7 @@ class ChuckNorrisJokeHttpClientTest() {
     }
 
     @Test
-    fun includes_are_hidden_if_not_set() {
+    fun includes_are_ignored_if_not_set() {
         //given
         val client = ChuckNorrisJokeHttpClient("http://dummyBaseUrl", "", "dummyExcludes")
         //when
@@ -26,13 +26,23 @@ class ChuckNorrisJokeHttpClientTest() {
     }
 
     @Test
-    fun excludes_are_hidden_if_not_set() {
+    fun excludes_are_ignored_if_not_set() {
         //given
         val client = ChuckNorrisJokeHttpClient("http://dummyBaseUrl", "dummyIncludes", "")
         //when
         val url = client.createRandomJokeUrl()
         //than
         assertThat(url).isEqualTo("http://dummyBaseUrl/random?&limitTo=[dummyIncludes]")
+    }
+
+    @Test
+    fun includes_or_excludes_are_ignored_if_not_set() {
+        //given
+        val client = ChuckNorrisJokeHttpClient("http://dummyBaseUrl", "", "")
+        //when
+        val url = client.createRandomJokeUrl()
+        //than
+        assertThat(url).isEqualTo("http://dummyBaseUrl/random?")
     }
 
 }
