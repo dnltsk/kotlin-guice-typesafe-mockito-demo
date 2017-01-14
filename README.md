@@ -4,7 +4,7 @@
 
 # Kotlin, Google Guice, Typesafe Config, Mockito Demo
 
-This Demo gives you an example how to set up an application in Kotlin with Guice, Typesafe Config, and Mockito.
+This demo gives you an example how to set up an application in Kotlin with Google Guice, Typesafe Config, and Mockito.
 Looks like that's the counterpart to the [spring-boot-kotlin-demo](https://github.com/sdeleuze/spring-boot-kotlin-demo)
 
 Summary of what this demo brings together: 
@@ -33,7 +33,7 @@ In addition two major issues happen:
 *The tricky part when using it with Kotlin is that all classes and methods are final and per se not mockable.
 Therefore we can use [**Mockito-Kotlin**](https://github.com/nhaarman/mockito-kotlin) which opens them for testing.*
 * as written above [**Logstash Lockback**](https://github.com/logstash/logstash-logback-encoder) was a reason to turn away from Spring Boot so it should be in that demo as well.
-* last but not least [**Jackson**](https://github.com/FasterXML/jackson) is the de-facto standard when it's about serialization. Logstash depends on it, Kotlin can use it 
+* last but not least [**Jackson**](https://github.com/FasterXML/jackson) is the de-facto standard when it's about serialization. **Logstash** depends on it, **Kotlin** can use it 
 
 ## build
 
