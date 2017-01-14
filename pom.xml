@@ -11,7 +11,7 @@
   <url>https://github.com/dnltsk/kotlin-guice-typesafe-mockito-demo</url>
 
   <properties>
-    <kotlin.version>1.0.5</kotlin.version>
+    <kotlin.version>1.0.6</kotlin.version>
     <guice.version>4.1.0</guice.version>
     <typesafe.config.version>1.3.1</typesafe.config.version>
     <typesafe.config-guice.version>0.0.3</typesafe.config-guice.version>
